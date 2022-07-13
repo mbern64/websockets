@@ -291,17 +291,16 @@ class WebSocketCommonProtocol(asyncio.Protocol):
         self.pings: Dict[bytes, asyncio.Future[None]] = {}
 
         # Task running the data transfer.
-        print('Initializing')
-        self.transfer_data_task: asyncio.Task[None]
+        self.transfer_data_task = asyncio.Task[None]
 
         # Exception that occurred during data transfer, if any.
         self.transfer_data_exc: Optional[BaseException] = None
 
         # Task sending keepalive pings.
-        self.keepalive_ping_task: asyncio.Task[None]
+        self.keepalive_ping_task = asyncio.Task[None]
 
         # Task closing the TCP connection.
-        self.close_connection_task: asyncio.Task[None]
+        self.close_connection_task = asyncio.Task[None]
 
     # Copied from asyncio.FlowControlMixin
     async def _drain_helper(self) -> None:  # pragma: no cover
