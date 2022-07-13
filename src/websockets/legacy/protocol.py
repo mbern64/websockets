@@ -256,11 +256,11 @@ class WebSocketCommonProtocol(asyncio.Protocol):
             self.logger.debug("= connection is CONNECTING")
 
         # HTTP protocol parameters.
-        self.path: str
+        self.path = '/'
         """Path of the opening handshake request."""
-        self.request_headers: Headers
+        self.request_headers = request_headers
         """Opening handshake request headers."""
-        self.response_headers: Headers
+        self.response_headers = response_headers
         """Opening handshake response headers."""
 
         # WebSocket protocol parameters.
