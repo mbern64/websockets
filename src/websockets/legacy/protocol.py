@@ -184,6 +184,8 @@ class WebSocketCommonProtocol(asyncio.Protocol):
         legacy_recv: bool = False,
         loop: Optional[asyncio.AbstractEventLoop] = None,
         timeout: Optional[float] = None,
+        request_headers: Optional[Headers] = None,
+        response_headers: Optional[Headers] = None
     ) -> None:
         if legacy_recv:  # pragma: no cover
             warnings.warn("legacy_recv is deprecated", DeprecationWarning)
