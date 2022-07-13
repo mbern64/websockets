@@ -251,7 +251,7 @@ class WebSocketCommonProtocol(asyncio.Protocol):
         # are shared between the client-side and the server-side.
         # Subclasses implement the opening handshake and, on success, execute
         # :meth:`connection_open` to change the state to OPEN.
-        self.state = State.CONNECTING
+        self.state = State.OPEN
         if self.debug:
             self.logger.debug("= connection is CONNECTING")
 
