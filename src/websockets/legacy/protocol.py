@@ -291,6 +291,7 @@ class WebSocketCommonProtocol(asyncio.Protocol):
         self.pings: Dict[bytes, asyncio.Future[None]] = {}
 
         # Task running the data transfer.
+        print('Initializing')
         self.transfer_data_task: asyncio.Task[None]
 
         # Exception that occurred during data transfer, if any.
